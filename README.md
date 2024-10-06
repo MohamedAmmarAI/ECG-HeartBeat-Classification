@@ -20,19 +20,19 @@ Electrocardiogram (ECG) data plays a crucial role in diagnosing cardiac abnormal
 
 ## Dataset
 The dataset used in this project is publicly available on Kaggle. It contains ECG recordings with labeled heartbeat classes, including:
-(*) 0: Normal
-(*) 1: Abnormal Class 1
-(*) 2: Abnormal Class 2
-(*) 3: Abnormal Class 3
-(*) 4: Abnormal Class 4
+- 0: Normal
+- 1: Abnormal Class 1
+- 2: Abnormal Class 2
+- 3: Abnormal Class 3
+- 4: Abnormal Class 4
 
 ## Technologies Used
-(-) Python
-(-) Streamlit
-(-) Scikit-learn
-(-) Pandas
-(-) NumPy
-(-) Matplotlib/Seaborn (for visualization)
+- Python
+- Streamlit
+- Scikit-learn
+- Pandas
+- NumPy
+- Matplotlib/Seaborn (for visualization)
 
 
 
