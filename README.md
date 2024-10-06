@@ -7,13 +7,6 @@ This project focuses on the development of a machine learning model for classify
 - [Introduction](#introduction)
 - [Dataset](#dataset)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Model](#model)
-- [Results](#results)
-- [Future Improvements](#future-improvements)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 Electrocardiogram (ECG) data plays a crucial role in diagnosing cardiac abnormalities. This project utilizes machine learning techniques to classify heartbeat signals as either normal (0) or one of several abnormal categories (1, 2, 3, 4). The model aims to enhance diagnostic accuracy and support healthcare professionals with automated heartbeat classification.
