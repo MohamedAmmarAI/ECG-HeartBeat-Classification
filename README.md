@@ -7,6 +7,8 @@ This project focuses on the development of a machine learning model for classify
 - [Introduction](#introduction)
 - [Dataset](#dataset)
 - [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Future Improvements](#future-improvements)
 
 ## Introduction
 Electrocardiogram (ECG) data plays a crucial role in diagnosing cardiac abnormalities. This project utilizes machine learning techniques to classify heartbeat signals as either normal (0) or one of several abnormal categories (1, 2, 3, 4). The model aims to enhance diagnostic accuracy and support healthcare professionals with automated heartbeat classification.
@@ -27,6 +29,15 @@ The dataset used in this project is publicly available on Kaggle. It contains EC
 - NumPy
 - Matplotlib/Seaborn (for visualization)
 
+## Installation
+To get started with this project, follow these steps:
+  1. Clone this repository:
+     git clone https://github.com/MohamedAmmarAI/ECG-HeartBeat-Classification.git
+     cd ECG-HeartBeat-Classification
+## Future Improvements
+- Enhance model generalization by using additional datasets.
+- Improve the accuracy for underrepresented abnormal classes.
+- Explore deep learning approaches such as convolutional neural networks (CNN) for ECG data analysis.
 
 
 
