@@ -32,8 +32,8 @@ The dataset used in this project is publicly available on Kaggle. It contains EC
 ## Installation
 To get started with this project, follow these steps:
   1. Clone this repository:
-     git clone https://github.com/MohamedAmmarAI/ECG-HeartBeat-Classification.git
-     cd ECG-HeartBeat-Classification
+    - git clone https://github.com/MohamedAmmarAI/ECG-HeartBeat-Classification.git
+    - cd ECG-HeartBeat-Classification
 ## Future Improvements
 - Enhance model generalization by using additional datasets.
 - Improve the accuracy for underrepresented abnormal classes.
