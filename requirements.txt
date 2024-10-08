@@ -3,4 +3,3 @@ rarfile
 scikit-learn 
 streamlit
 matplotlib
-zipfile
