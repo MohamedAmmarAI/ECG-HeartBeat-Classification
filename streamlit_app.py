@@ -6,6 +6,8 @@ import numpy as np
 import joblib
 import os
 import zipfile
+import rarfile
+
 
 
 # Paths to the multi-part RAR files and output folder
