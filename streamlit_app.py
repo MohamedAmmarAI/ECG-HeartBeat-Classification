@@ -7,42 +7,47 @@ import joblib
 import os
 import zipfile
 
-# Path to the ZIP file containing the models
-zip_file_path = 'models.zip'
+
+# Paths to the multi-part RAR files and output folder
+rar_part1 = 'model.part01.rar'
+rar_part2 = 'model.part02.rar'
 extracted_folder = 'extracted_models'
 
-# Extract models from ZIP if not already done
-def extract_models(zip_file, output_folder):
-    if os.path.exists(zip_file):
-        if not os.path.exists(output_folder):
-            with zipfile.ZipFile(zip_file, 'r') as zip_ref:
-                zip_ref.extractall(output_folder)
-        return True
-    return False
+# Extract multi-part RAR file
+def extract_rar_parts(part1, part2, output_folder):
+    if os.path.exists(part1) and os.path.exists(part2):
+        # Use rarfile to open the first part (it will automatically combine with part 2)
+        try:
+            with rarfile.RarFile(part1) as rf:
+                rf.extractall(output_folder)
+            return True
+        except rarfile.Error as e:
+            st.error(f"RAR extraction failed: {str(e)}")
+            return False
+    else:
+        st.error(f"Error: RAR parts {part1} or {part2} not found.")
+        return False
 
 # Load models from extracted folder
 def load_models(folder):
-    model_1_path = os.path.join(folder, 'model_1.pkl')
-    model_2_path = os.path.join(folder, 'model_2.pkl')
-
-    if os.path.exists(model_1_path) and os.path.exists(model_2_path):
-        model_1 = joblib.load(model_1_path)
-        model_2 = joblib.load(model_2_path)
-        return model_1, model_2
+    model_path = os.path.join(folder, 'model.pkl')  # Adjust to the actual model name after extraction
+    if os.path.exists(model_path):
+        model = joblib.load(model_path)
+        return model
     else:
-        st.error("Error: One or both model files not found.")
-        return None, None
+        st.error("Error: Model file not found after extraction.")
+        return None
+
 # Main Streamlit app
 def main():
     st.title("ECG Heartbeat Classification")
 
-    # Extract and load models
-    if extract_models(zip_file_path, extracted_folder):
-        model_1, model_2 = load_models(extracted_folder)
-        if model_1 is None or model_2 is None:
+    # Extract the model from multi-part RAR
+    if extract_rar_parts(rar_part1, rar_part2, extracted_folder):
+        model = load_models(extracted_folder)
+        if model is None:
             return
     else:
-        st.error(f"Error: The ZIP file {zip_file_path} was not found.")
         return
 
     st.write("Upload a CSV file containing ECG data.")
