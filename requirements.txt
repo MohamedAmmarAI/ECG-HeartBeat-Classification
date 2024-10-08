@@ -1,1 +1,5 @@
 joblib
+rarfile 
+scikit-learn 
+streamlit
+matplotlib
