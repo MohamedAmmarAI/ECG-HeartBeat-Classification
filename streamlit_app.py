@@ -5,7 +5,7 @@ import numpy as np
 import joblib
 
 # Load the pre-trained model
-model = joblib.load('model.pkl')
+model = joblib.load('best_rf_model_compressed.joblib')
 
 def main():
     st.title("ECG Heartbeat Classification")
